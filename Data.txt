@@ -1,0 +1,444 @@
+curl -H "Authorization: token TOKEN" https://api.github.com/user
+```
+{
+  "login": "chabbanadir",
+  "id": 67875720,
+  "node_id": "MDQ6VXNlcjY3ODc1NzIw",
+  "avatar_url": "https://avatars.githubusercontent.com/u/67875720?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/chabbanadir",
+  "html_url": "https://github.com/chabbanadir",
+  "followers_url": "https://api.github.com/users/chabbanadir/followers",
+  "following_url": "https://api.github.com/users/chabbanadir/following{/other_user}",
+  "gists_url": "https://api.github.com/users/chabbanadir/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/chabbanadir/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/chabbanadir/subscriptions",
+  "organizations_url": "https://api.github.com/users/chabbanadir/orgs",
+  "repos_url": "https://api.github.com/users/chabbanadir/repos",
+  "events_url": "https://api.github.com/users/chabbanadir/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/chabbanadir/received_events",
+  "type": "User",
+  "user_view_type": "public",
+  "site_admin": false,
+  "name": null,
+  "company": null,
+  "blog": "",
+  "location": null,
+  "email": null,
+  "hireable": null,
+  "bio": null,
+  "twitter_username": null,
+  "notification_email": null,
+  "public_repos": 8,
+  "public_gists": 0,
+  "followers": 1,
+  "following": 1,
+  "created_at": "2020-07-05T19:27:12Z",
+  "updated_at": "2025-01-31T14:01:37Z"
+}
+
+
+```
+
+curl -H "Authorization: token TOKEN" https://api.github.com/user/repos
+```
+[
+  {
+    "id": 910290624,
+    "node_id": "R_kgDONkHuwA",
+    "name": "AI-SSH-Backend",
+    "full_name": "chabbanadir/AI-SSH-Backend",
+    "private": true,
+    "owner": {
+      "login": "chabbanadir",
+      "id": 67875720,
+      "node_id": "MDQ6VXNlcjY3ODc1NzIw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67875720?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chabbanadir",
+      "html_url": "https://github.com/chabbanadir",
+      "followers_url": "https://api.github.com/users/chabbanadir/followers",
+      "following_url": "https://api.github.com/users/chabbanadir/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chabbanadir/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chabbanadir/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chabbanadir/subscriptions",
+      "organizations_url": "https://api.github.com/users/chabbanadir/orgs",
+      "repos_url": "https://api.github.com/users/chabbanadir/repos",
+      "events_url": "https://api.github.com/users/chabbanadir/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chabbanadir/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "html_url": "https://github.com/chabbanadir/AI-SSH-Backend",
+    "description": null,
+    "fork": false,
+    "url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend",
+    "forks_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/forks",
+    "keys_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/teams",
+    "hooks_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/hooks",
+    "issue_events_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/events",
+    "assignees_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/tags",
+    "blobs_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/languages",
+    "stargazers_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/stargazers",
+    "contributors_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/contributors",
+    "subscribers_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/subscribers",
+    "subscription_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/subscription",
+    "commits_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/merges",
+    "archive_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/downloads",
+    "issues_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/labels{/name}",
+    "releases_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/deployments",
+    "created_at": "2024-12-30T22:34:40Z",
+    "updated_at": "2025-01-22T23:30:46Z",
+    "pushed_at": "2025-01-22T23:30:43Z",
+    "git_url": "git://github.com/chabbanadir/AI-SSH-Backend.git",
+    "ssh_url": "git@github.com:chabbanadir/AI-SSH-Backend.git",
+    "clone_url": "https://github.com/chabbanadir/AI-SSH-Backend.git",
+    "svn_url": "https://github.com/chabbanadir/AI-SSH-Backend",
+    "homepage": null,
+    "size": 18614,
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "language": "C#",
+    "has_issues": true,
+    "has_projects": true,
+    "has_downloads": true,
+    "has_wiki": false,
+    "has_pages": false,
+    "has_discussions": false,
+    "forks_count": 0,
+    "mirror_url": null,
+    "archived": false,
+    "disabled": false,
+    "open_issues_count": 0,
+    "license": null,
+    "allow_forking": true,
+    "is_template": false,
+    "web_commit_signoff_required": false,
+    "topics": [
+
+    ],
+    "visibility": "private",
+    "forks": 0,
+    "open_issues": 0,
+    "watchers": 0,
+    "default_branch": "master",
+    "permissions": {
+      "admin": true,
+      "maintain": true,
+      "push": true,
+      "triage": true,
+      "pull": true
+    }
+  },
+]
+
+```
+curl -H "Authorization: token TOKEN" \
+  https://api.github.com/repos/chabbanadir/AI-SSH-Backend/commits
+
+```
+
+[
+  {
+    "sha": "63218a62691d25f8c35dfd31c89202c7dce4127f",
+    "node_id": "C_kwDONkHuwNoAKDYzMjE4YTYyNjkxZDI1ZjhjMzVkZmQzMWM4OTIwMmM3ZGNlNDEyN2Y",
+    "commit": {
+      "author": {
+        "name": "chabbanadir",
+        "email": "moh.chabba@gmail.com",
+        "date": "2025-01-22T23:30:39Z"
+      },
+      "committer": {
+        "name": "chabbanadir",
+        "email": "moh.chabba@gmail.com",
+        "date": "2025-01-22T23:30:39Z"
+      },
+      "message": "SSH ExecuteCommandAsync fixed",
+      "tree": {
+        "sha": "0365b74443f8e398839144c6d600786b90346520",
+        "url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/git/trees/0365b74443f8e398839144c6d600786b90346520"
+      },
+      "url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/git/commits/63218a62691d25f8c35dfd31c89202c7dce4127f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/commits/63218a62691d25f8c35dfd31c89202c7dce4127f",
+    "html_url": "https://github.com/chabbanadir/AI-SSH-Backend/commit/63218a62691d25f8c35dfd31c89202c7dce4127f",
+    "comments_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/commits/63218a62691d25f8c35dfd31c89202c7dce4127f/comments",
+    "author": {
+      "login": "chabbanadir",
+      "id": 67875720,
+      "node_id": "MDQ6VXNlcjY3ODc1NzIw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67875720?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chabbanadir",
+      "html_url": "https://github.com/chabbanadir",
+      "followers_url": "https://api.github.com/users/chabbanadir/followers",
+      "following_url": "https://api.github.com/users/chabbanadir/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chabbanadir/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chabbanadir/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chabbanadir/subscriptions",
+      "organizations_url": "https://api.github.com/users/chabbanadir/orgs",
+      "repos_url": "https://api.github.com/users/chabbanadir/repos",
+      "events_url": "https://api.github.com/users/chabbanadir/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chabbanadir/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chabbanadir",
+      "id": 67875720,
+      "node_id": "MDQ6VXNlcjY3ODc1NzIw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67875720?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chabbanadir",
+      "html_url": "https://github.com/chabbanadir",
+      "followers_url": "https://api.github.com/users/chabbanadir/followers",
+      "following_url": "https://api.github.com/users/chabbanadir/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chabbanadir/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chabbanadir/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chabbanadir/subscriptions",
+      "organizations_url": "https://api.github.com/users/chabbanadir/orgs",
+      "repos_url": "https://api.github.com/users/chabbanadir/repos",
+      "events_url": "https://api.github.com/users/chabbanadir/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chabbanadir/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "24d8aa6cfd0189a81dca71c9239fa13dfc9c87c9",
+        "url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/commits/24d8aa6cfd0189a81dca71c9239fa13dfc9c87c9",
+        "html_url": "https://github.com/chabbanadir/AI-SSH-Backend/commit/24d8aa6cfd0189a81dca71c9239fa13dfc9c87c9"
+      }
+    ]
+  },
+]
+```
+curl -H "Authorization: token TOKEN" \
+     https://api.github.com/repos/chabbanadir/AI-SSH-Backend/commits/63218a62691d25f8c35dfd31c89202c7dce4127f
+
+```
+{
+  "sha": "63218a62691d25f8c35dfd31c89202c7dce4127f",
+  "node_id": "C_kwDONkHuwNoAKDYzMjE4YTYyNjkxZDI1ZjhjMzVkZmQzMWM4OTIwMmM3ZGNlNDEyN2Y",
+  "commit": {
+    "author": {
+      "name": "chabbanadir",
+      "email": "moh.chabba@gmail.com",
+      "date": "2025-01-22T23:30:39Z"
+    },
+    "committer": {
+      "name": "chabbanadir",
+      "email": "moh.chabba@gmail.com",
+      "date": "2025-01-22T23:30:39Z"
+    },
+    "message": "SSH ExecuteCommandAsync fixed",
+    "tree": {
+      "sha": "0365b74443f8e398839144c6d600786b90346520",
+      "url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/git/trees/0365b74443f8e398839144c6d600786b90346520"
+    },
+    "url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/git/commits/63218a62691d25f8c35dfd31c89202c7dce4127f",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/commits/63218a62691d25f8c35dfd31c89202c7dce4127f",
+  "html_url": "https://github.com/chabbanadir/AI-SSH-Backend/commit/63218a62691d25f8c35dfd31c89202c7dce4127f",
+  "comments_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/commits/63218a62691d25f8c35dfd31c89202c7dce4127f/comments",
+  "author": {
+    "login": "chabbanadir",
+    "id": 67875720,
+    "node_id": "MDQ6VXNlcjY3ODc1NzIw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/67875720?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/chabbanadir",
+    "html_url": "https://github.com/chabbanadir",
+    "followers_url": "https://api.github.com/users/chabbanadir/followers",
+    "following_url": "https://api.github.com/users/chabbanadir/following{/other_user}",
+    "gists_url": "https://api.github.com/users/chabbanadir/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/chabbanadir/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/chabbanadir/subscriptions",
+    "organizations_url": "https://api.github.com/users/chabbanadir/orgs",
+    "repos_url": "https://api.github.com/users/chabbanadir/repos",
+    "events_url": "https://api.github.com/users/chabbanadir/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/chabbanadir/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "chabbanadir",
+    "id": 67875720,
+    "node_id": "MDQ6VXNlcjY3ODc1NzIw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/67875720?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/chabbanadir",
+    "html_url": "https://github.com/chabbanadir",
+    "followers_url": "https://api.github.com/users/chabbanadir/followers",
+    "following_url": "https://api.github.com/users/chabbanadir/following{/other_user}",
+    "gists_url": "https://api.github.com/users/chabbanadir/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/chabbanadir/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/chabbanadir/subscriptions",
+    "organizations_url": "https://api.github.com/users/chabbanadir/orgs",
+    "repos_url": "https://api.github.com/users/chabbanadir/repos",
+    "events_url": "https://api.github.com/users/chabbanadir/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/chabbanadir/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "24d8aa6cfd0189a81dca71c9239fa13dfc9c87c9",
+      "url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/commits/24d8aa6cfd0189a81dca71c9239fa13dfc9c87c9",
+      "html_url": "https://github.com/chabbanadir/AI-SSH-Backend/commit/24d8aa6cfd0189a81dca71c9239fa13dfc9c87c9"
+    }
+  ],
+  "stats": {
+    "total": 10,
+    "additions": 5,
+    "deletions": 5
+  },
+  "files": [
+    {
+      "sha": "5ad0c7887870f617538c036f854c8df512ca5e80",
+      "filename": "backend/Services/SSH/SSHService.cs",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 5,
+      "changes": 10,
+      "blob_url": "https://github.com/chabbanadir/AI-SSH-Backend/blob/63218a62691d25f8c35dfd31c89202c7dce4127f/backend%2FServices%2FSSH%2FSSHService.cs",
+      "raw_url": "https://github.com/chabbanadir/AI-SSH-Backend/raw/63218a62691d25f8c35dfd31c89202c7dce4127f/backend%2FServices%2FSSH%2FSSHService.cs",
+      "contents_url": "https://api.github.com/repos/chabbanadir/AI-SSH-Backend/contents/backend%2FServices%2FSSH%2FSSHService.cs?ref=63218a62691d25f8c35dfd31c89202c7dce4127f",
+      "patch": "@@ -283,7 +283,7 @@ private string ExtractCommandOutput(string rawOutput)\n         {\n             // Remove ANSI codes and control characters\n             var cleanedOutput = StripAnsiCodes(rawOutput);\n-            cleanedOutput = RemoveControlCharacters(cleanedOutput);\n+            //cleanedOutput = RemoveControlCharacters(cleanedOutput);\n \n             // Find the first occurrence of __COMMAND_START__\n             int firstStart = cleanedOutput.IndexOf(CommandStartMarker, StringComparison.Ordinal);\n@@ -339,9 +339,9 @@ private string StripAnsiCodes(string text)\n             return string.IsNullOrWhiteSpace(text) ? string.Empty : AnsiRegex.Replace(text, string.Empty);\n         }\n \n-        private string RemoveControlCharacters(string text)\n-        {\n-            return string.IsNullOrWhiteSpace(text) ? string.Empty : Regex.Replace(text, @\"[\\x00-\\x1F\\x7F]\", string.Empty);\n-        }\n+        // private string RemoveControlCharacters(string text)\n+        // {\n+        //     return string.IsNullOrWhiteSpace(text) ? string.Empty : Regex.Replace(text, @\"[\\x00-\\x1F\\x7F]\", string.Empty);\n+        // }\n     }\n }"
+    }
+  ]
+}
+
+
+
+```
+
+curl -H "Authorization: token TOKEN" https://api.github.com/user/orgs
+```
+[
+
+]
+```
+
+
+curl -X PATCH -H "Authorization: token TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "name": "Chabba Mohamed Nadir",
+           "bio": "🚀 Full Stack Developer | DevOps Enthusiast | AI/ML Explorer",
+           "location": "Tangier, Morocco"
+         }' \
+     https://api.github.com/user
+
+```
+// returns  
+
+{
+  "login": "chabbanadir",
+  "id": 67875720,
+  "node_id": "MDQ6VXNlcjY3ODc1NzIw",
+  "avatar_url": "https://avatars.githubusercontent.com/u/67875720?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/chabbanadir",
+  "html_url": "https://github.com/chabbanadir",
+  "followers_url": "https://api.github.com/users/chabbanadir/followers",
+  "following_url": "https://api.github.com/users/chabbanadir/following{/other_user}",
+  "gists_url": "https://api.github.com/users/chabbanadir/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/chabbanadir/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/chabbanadir/subscriptions",
+  "organizations_url": "https://api.github.com/users/chabbanadir/orgs",
+  "repos_url": "https://api.github.com/users/chabbanadir/repos",
+  "events_url": "https://api.github.com/users/chabbanadir/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/chabbanadir/received_events",
+  "type": "User",
+  "user_view_type": "private",
+  "site_admin": false,
+  "name": "Chabba Mohamed Nadir",
+  "company": null,
+  "blog": "",
+  "location": "Tangier, Morocco",
+  "email": null,
+  "hireable": null,
+  "bio": "🚀 Full Stack Developer | DevOps Enthusiast | AI/ML Explorer",
+  "twitter_username": null,
+  "public_repos": 8,
+  "public_gists": 0,
+  "followers": 1,
+  "following": 1,
+  "created_at": "2020-07-05T19:27:12Z",
+  "updated_at": "2025-01-31T14:43:35Z",
+  "private_gists": 0,
+  "total_private_repos": 6,
+  "owned_private_repos": 6,
+  "disk_usage": 356254,
+  "collaborators": 2,
+  "two_factor_authentication": false,
+  "plan": {
+    "name": "free",
+    "space": 976562499,
+    "collaborators": 0,
+    "private_repos": 10000
+  }
+}
+```
+
+
+curl -H "Authorization: token TOKEN" \
+  https://api.github.com/repos/chabbanadir/AI-SSH-Backend/languages
+
+```
+{
+  "C#": 154468,
+  "Vue": 38618,
+  "TypeScript": 4954,
+  "CSS": 2149,
+  "Dockerfile": 846,
+  "JavaScript": 690,
+  "HTML": 330
+}
+
+```
+

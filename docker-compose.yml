@@ -1,0 +1,62 @@
+services:
+  db:
+    image: postgres:16
+    container_name: commitwiz_db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: commitwiz_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - commitwiz_data:/var/lib/postgresql/data
+
+  thewiz-backend:
+    build:
+      context: ./thewiz
+      dockerfile: Dockerfile
+    container_name: commitwiz_backend
+    volumes:
+      # Mount local `./thewiz` folder into `/usr/src/app` in the container
+      - ./thewiz:/app
+    # This automatically loads .env into the container's environment
+    env_file:
+      - ./thewiz/.env
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    # For production, this is enough. If you want hot reload for local dev, see notes below.
+  ngrok:
+    image: wernight/ngrok
+    container_name: ngrok
+    depends_on:
+      - thewiz-backend
+    # The important part: use the command to forward to 'thewiz-backend:3000'
+    command: [
+      "ngrok", 
+      "http", 
+      "thewiz-backend:3000",
+      "--authtoken", 
+      "2sqdjm1omlyC5xjxKg86uba6sRH_5zw8vEjYoT4rcWaETrc4U"
+    ]
+    ports:
+      - "4040:4040" # This is the ngrok web UI - optional but useful for debugging
+    environment:
+      # Replace this with your own ngrok auth token
+      NGROK_AUTH: "2sqdjm1omlyC5xjxKg86uba6sRH_5zw8vEjYoT4rcWaETrc4U"
+      NGROK_ADDR: "thewiz-backend:3000"
+  commitwiz-frontend:
+    build:
+      context: ./Uiwiz
+      dockerfile: Dockerfile
+    container_name: commitwiz_frontend
+    volumes:
+      - ./Uiwiz:/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - thewiz-backend
+volumes:
+  commitwiz_data:
+

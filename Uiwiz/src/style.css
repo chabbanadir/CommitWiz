@@ -1,0 +1,12 @@
+@import "tailwindcss";
+.text-stroke {
+    -webkit-text-stroke:  4px #00b5ff; /* Apply a 1px black stroke */
+    /* Optionally, you can make the text fill transparent to show only the stroke */
+    /* color: transparent; */
+  }
+  
+  @theme {
+    --color-pbg: #31172e;
+    --color-shadow : rgba(128, 0, 128, 0.8);
+    --color-wiz: #00b5ff;
+}
