@@ -1,14 +1,18 @@
 <template>
   <!-- Main Dashboard Container with Tailwind classes -->
-  <div class=" border bg-pbg/97  p-12 h-screen overflow-auto shadow-xl shadow-frame">
-    <div class="flex flex-col gap-8">
+  <div class="border bg-pbg/97 p-12 h-screen overflow-auto shadow-xl shadow-frame">
+    <!-- Top Bar -->
+    <top-bar
+      :userName="userData?.user?.name || 'User'"
+      @user-data-updated="handleUserDataUpdated"
+    />
+    <div class="flex flex-col gap-8 mt-12">
       <!-- Top row: three blocks side-by-side -->
-      <div class="flex flex-row gap-4">
+      <div class="flex flex-col md:flex-row gap-4">
         <user-profile-block :profile="userData.user" />
         <language-overview-block :repositories="userData.repositories" />
         <repository-metrics-block :repositories="userData.repositories" />
       </div>
-
       <!-- Repository list with dynamic filters -->
       <repository-list
         :repositories="filteredRepositories"
@@ -19,6 +23,7 @@
 </template>
 
 <script>
+import TopBar from '../TopBar.vue';
 import UserProfileBlock from './UserProfileBlock.vue';
 import LanguageOverviewBlock from './LanguageOverviewBlock.vue';
 import RepositoryMetricsBlock from './RepositoryMetricsBlock.vue';
@@ -27,6 +32,7 @@ import RepositoryList from './RepositoryList.vue';
 export default {
   name: 'Dashboard',
   components: {
+    TopBar,
     UserProfileBlock,
     LanguageOverviewBlock,
     RepositoryMetricsBlock,
@@ -59,7 +65,6 @@ export default {
         const nameMatch = repo.name
           .toLowerCase()
           .includes(this.filters.searchText.toLowerCase());
-
         // Match by language (if a language filter is set)
         let languageMatch = true;
         if (this.filters.language) {
@@ -67,20 +72,23 @@ export default {
             langObj => langObj.language === this.filters.language
           );
         }
-
         return nameMatch && languageMatch;
       });
     }
   },
   methods: {
+    handleUserDataUpdated(updatedData) {
+      // Update the userData with the refreshed data.
+      this.userData = updatedData;
+      // Optionally, update localStorage.
+      localStorage.setItem('userData', JSON.stringify(updatedData));
+    },
     handleFilter(newFilters) {
       this.filters = { ...this.filters, ...newFilters };
     }
   }
 };
 </script>
-
-<!-- No <style> block needed since we rely on Tailwind classes -->
 
 <style>
 .shadow-frame {
