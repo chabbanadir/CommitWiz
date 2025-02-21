@@ -1,19 +1,16 @@
+<!-- Dashboard.vue -->
 <template>
-  <!-- Main Dashboard Container with Tailwind classes -->
   <div class="border bg-pbg/97 p-12 h-screen overflow-auto shadow-xl shadow-frame">
-    <!-- Top Bar -->
     <top-bar
-      :userName="userData?.user?.name || 'User'"
-      @user-data-updated="handleUserDataUpdated"
+      :userName="userData?.user?.names || 'CommitWiz'"
+      @user-data-refresh="handleUserDataUpdated"
     />
     <div class="flex flex-col gap-8 mt-12">
-      <!-- Top row: three blocks side-by-side -->
       <div class="flex flex-col md:flex-row gap-4">
-        <user-profile-block :profile="userData.user" />
+        <user-profile-block :profile="userData.user" @update:profile="userData.user = $event"/>
         <language-overview-block :repositories="userData.repositories" />
         <repository-metrics-block :repositories="userData.repositories" />
       </div>
-      <!-- Repository list with dynamic filters -->
       <repository-list
         :repositories="filteredRepositories"
         @filter="handleFilter"
@@ -23,6 +20,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import TopBar from '../TopBar.vue';
 import UserProfileBlock from './UserProfileBlock.vue';
 import LanguageOverviewBlock from './LanguageOverviewBlock.vue';
@@ -48,10 +46,8 @@ export default {
     };
   },
   created() {
-    // Load userData from localStorage (set in AuthCallback.vue)
     const storedUserData = localStorage.getItem('userData');
     if (!storedUserData) {
-      // If missing, redirect or handle error
       this.$router.push({ name: 'Home' });
       return;
     }
@@ -61,11 +57,7 @@ export default {
     filteredRepositories() {
       if (!this.userData) return [];
       return this.userData.repositories.filter(repo => {
-        // Match by repo name
-        const nameMatch = repo.name
-          .toLowerCase()
-          .includes(this.filters.searchText.toLowerCase());
-        // Match by language (if a language filter is set)
+        const nameMatch = repo.name.toLowerCase().includes(this.filters.searchText.toLowerCase());
         let languageMatch = true;
         if (this.filters.language) {
           languageMatch = repo.languages?.some(
@@ -77,11 +69,24 @@ export default {
     }
   },
   methods: {
-    handleUserDataUpdated(updatedData) {
-      // Update the userData with the refreshed data.
-      this.userData = updatedData;
-      // Optionally, update localStorage.
-      localStorage.setItem('userData', JSON.stringify(updatedData));
+    handleUserDataUpdated() {
+      const dt = localStorage.getItem('userData');
+      const data = JSON.parse(dt)
+      console.log("User Data :" , data.user.id);
+
+      axios.get(`http://0.0.0.0:3000/user-profile/${data.user.id}`, {
+
+      })
+      .then(response => {
+        const updatedData = response.data;
+        this.userData = updatedData;
+        console.log('Response:', response);
+
+        localStorage.setItem('userData', JSON.stringify(updatedData));
+      })
+      .catch(error => {
+        console.error('Error refreshing user data:', error);
+      });
     },
     handleFilter(newFilters) {
       this.filters = { ...this.filters, ...newFilters };
@@ -91,6 +96,7 @@ export default {
 </script>
 
 <style>
+
 .shadow-frame {
   box-shadow: inset 0 0 95px rgba(128, 0, 128, 0.6);
 }

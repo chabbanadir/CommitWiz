@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full max-w-sm mx-auto bg-white/80 backdrop-blur-sm border border-2 border-yellow-500 rounded-xl p-6 shadow-md text-gray-900 transition-colors"
+    class="w-full max-w-sm mx-auto bg-white/80 backdrop-blur-sm border-2 border-yellow-500 rounded-xl p-6 shadow-md text-gray-900 transition-colors"
   >
     <div class="flex flex-col items-center mb-5">
       <!-- Avatar -->
@@ -14,8 +14,24 @@
         <Icon icon="mdi:user" class="mr-2" width="24" height="24" />
         {{ profile.name }}
       </h2>
-      <!-- Username -->
-      <p class="text-gray-600">@{{ profile.username }}</p>
+      <!-- Username and Settings -->
+      <div class="flex items-center space-x-2">
+        <Icon
+          icon="mdi:gear"
+          class="cursor-pointer text-purple-700"
+          width="24"
+          height="24"
+          @click="openModal"
+        />
+        <span class="text-md text-gray-500 font-medium">{{ profile.username }}</span>
+      </div>
+      <!-- User Settings Modal -->
+      <UserSettingsModal 
+        :isOpen="modalOpen" 
+        :user="user"
+        @close="closeModal"
+        @save="handleSave"
+      />
     </div>
 
     <!-- Bio -->
@@ -49,14 +65,42 @@
 
 <script>
 import { Icon } from '@iconify/vue';
+import UserSettingsModal from './UserSettingsModal.vue';
 
 export default {
   name: 'UserProfileBlock',
-  components: { Icon },
+  components: { 
+    Icon,
+    UserSettingsModal
+  },
   props: {
     profile: {
       type: Object,
       required: true
+    }
+  },
+  data() {
+    return {
+      modalOpen: false,
+      // Create a mutable copy of the profile for editing
+      user: { ...this.profile }
+    };
+  },
+  methods: {
+    openModal() {
+      // Refresh the editable user data from the current profile when opening the modal.
+      this.user = { ...this.profile };
+      this.modalOpen = true;
+    },
+    closeModal() {
+      this.modalOpen = false;
+    },
+    handleSave(updatedUser) {
+      // Update both the local user and emit an event so that the parent updates its profile
+      this.user = { ...updatedUser };
+      // Emit the update event for the parent to catch and update its profile data.
+      this.$emit('update:profile', updatedUser);
+      this.modalOpen = false;
     }
   }
 };

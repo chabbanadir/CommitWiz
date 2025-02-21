@@ -38,14 +38,14 @@ export default {
           bio: userdata.user.bio,
           avatar_url: userdata.user.avatar_url,
           email: userdata.user.email,
-          location: userdata.user.location
+          location: userdata.user.location,
+          wiz: userdata.user.wiz
         },
         repositories: userdata.repositories || [],
         metrics: {
           totalRepositories: (userdata.repositories && userdata.repositories.length) || 0
         }
       };
-      console.log("structred data ", this.structuredData);
       this.authToken = token;
       setTimeout(() => {
         this.loading = false;

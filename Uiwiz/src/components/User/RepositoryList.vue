@@ -26,7 +26,6 @@
                    focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
           />
         </div>
-
         <!-- Language Dropdown -->
         <div class="relative">
           <Icon icon="mdi:filter-variant" class="absolute left-2 top-2 text-gray-400" width="20" height="20" />
@@ -50,7 +49,7 @@
     </div>
 
     <!-- Repository List as a Responsive Grid -->
-    <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+    <ul class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
       <li
         v-for="repo in reposWithLanguages"
         :key="repo.id"
@@ -67,8 +66,9 @@
             {{ repo.stars }}
           </div>
         </div>
-
-        <!-- Language Distribution (Progress Bars) -->
+          <!-- Divider between title and languages -->
+          <div class="border-t border-blue-500 my-2"></div>
+          <!-- Language Distribution (Progress Bars) -->
         <div v-if="repo.languages?.length" class="space-y-2">
           <div
             v-for="langObj in repo.languages"
